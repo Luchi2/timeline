@@ -1,18 +1,68 @@
 *{
 	margin: 0;
 	padding: 0;
-	color: white;
+	font-family: Lato;
+}
+::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+    display: none;  /* Ocultar scroll */
+}
+
+r::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+footer.footer {
+    background: var(--colorOne);
+    text-align: center;
+    color: white;
+    padding: 3vh 0;
+}
+
+article.referencias {
+    color: black !important;
+    margin: 10vh 5vw;
+    text-align: center;
+    display: grid;
+    gap: 2vh;
 }
 
 section.contentPage {
     display: grid;
     gap: 3vh;
     justify-content: center;
+    margin-block: 10vh;
+    position: relative;
+}
+
+.contentPage:before {
+    content: '';
+    width: 5px;
+    height: 100%;
+    background: var(--colorOne);
+    position: absolute;
+    left: 50%;
+}
+
+.contentPage details:nth-child(odd) {
+    margin-inline-start: 5vw;
 }
 
 p.itemSubtitle {
     grid-column: 1/-1;
     text-align: center;
+    font-weight: 700;
 }
 
 img.itemImg {
@@ -39,18 +89,25 @@ img.itemImg {
 .itemContain {
     grid-column: 1/-1;
     grid-row: 2/-1;
-    background: var(--colorThree);
+    background: var(--colorTwo);
     padding: 3vh 1vw;
     display: grid;
     grid-template-columns: 1fr 10vw;
     gap: 1vw;
     margin-block-start: -2vh;
+    border-radius: 5px;
+    border: 1px solid gray;
 }
 
 .itemContainTwo {
     grid-column: 1/-1;
     grid-row: 2/-1;
-    background: var(--colorThree);
+    background: var(--colorTwo);
+    border-top: 0 solid transparent;
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-radius: 5px;
     padding: 3vh 1vw;
     display: grid;
     grid-template-columns: 10vw 1fr;
@@ -64,12 +121,15 @@ img.itemImg {
     text-align: center;
     align-self: center;
     z-index: 1;
+    color: var(--colorOne);
     font-size: 22px;
-    background: red;
+    font-weight: 700;
+    background: var(--colorTwo);
     width: 7vw;
     margin: 0 auto;
     border-radius: 5px;
     position: relative;
+    border: 1px solid gray;
 }
 
 details[open]:nth-child(2n):before {
@@ -109,7 +169,7 @@ details[open]:nth-child(13):before {content:'';}
     color: var(--colorOne);
     width: 50vw;
     display: flex;
-    margin: 3vh auto;
+    margin: 6vh auto;
     padding: 1vh 1vw;
     justify-content: center;
     position: relative;
@@ -147,8 +207,8 @@ body {
 }
 
 :root{
-	--colorOne: #00569d;
-	--colorTwo: #22c3f5;
+	--colorOne: #437946;
+	--colorTwo: #BBF4BF;
 	--colorThree: #0161a4;
 }
 ::marker{
